@@ -5,7 +5,7 @@ num = 1
 primes = [2]
 
 def is_prime(number: int) -> bool:
-    for i in range(2, (number//2)+2):
+    for i in range(2, (number//2)+1):
         if number % i == 0:
             return False
     return True
