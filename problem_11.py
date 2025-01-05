@@ -27,9 +27,9 @@ cols = [([row[i] for row in rows]) for i in range(len(rows[0]))]
 print(cols[0])
 
 a = [[row[i+offset] for i,row in enumerate(rows) if 0 <= i+offset < len(row)] for offset in range(len(rows))]
-b = [[row[offset-i] for i, row in enumerate(rows) if 0 <= offset-i < len(row)] for offset in range(len(rows))]
+b = [[row[offset-i] for i,row in enumerate(rows) if 0 <= offset-i < len(row)] for offset in range(len(rows))]
 c = [[row[i+offset] for i,row in enumerate(reversed(rows)) if 0 <= i+offset < len(row)] for offset in range(len(rows))]
-d = [[row[offset-i] for i, row in enumerate(reversed(rows)) if 0 <= offset-i < len(row)] for offset in range(len(rows))]
+d = [[row[offset-i] for i,row in enumerate(reversed(rows)) if 0 <= offset-i < len(row)] for offset in range(len(rows))]
 
 directions = rows + cols + a + b + c + d
 
