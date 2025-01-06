@@ -2,12 +2,16 @@
 
 curr = 2
 num = 1
-primes = [2]
+primes = [2,3]
 
 def is_prime(number: int) -> bool:
-    for i in range(2, (number//2)+1):
-        if number % i == 0:
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    curr, limit = 5, number**0.5
+    while curr <= limit:
+        if number % curr == 0:
             return False
+        curr += 2
     return True
 
 while len(primes) < 10001:
@@ -16,3 +20,4 @@ while len(primes) < 10001:
         primes.append(curr)
 
 print(primes[-1])
+
