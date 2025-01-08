@@ -12,7 +12,6 @@ void Main()
             DateTime dateTime = new DateTime(year,month,day);
             if ((int)dateTime.DayOfWeek == 0)
             {
-                Console.WriteLine($"{year},{month},{day}");
                 res++;
             }
         }
