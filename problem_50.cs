@@ -16,6 +16,10 @@ for (int start = 0; start < primes.Count; start++)
 {
     for (int end = primes.Count - 1; end >= start; end--)
     {
+        if (end - start < res.Item1)
+        {
+            continue;
+        }
         int testSum = 0;
         for (int i = start; i < end; i++)
         {
