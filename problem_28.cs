@@ -7,7 +7,7 @@ int GetDiagonal(int diameter)
 
     res += ComputeDiagonal(radius, 8, 9); // top right
     res += ComputeDiagonal(radius, 6, 7); // top left
-    res += ComputeDiagonal(radius, 2, 3); // bottom left
+    res += ComputeDiagonal(radius, 2, 3); // bottom right
     res += ComputeDiagonal(radius, 4, 5); // bottom left
 
     return res;
