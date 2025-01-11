@@ -1,7 +1,5 @@
 // Amicable Numbers
 
-using System.Collections.Generic;
-
 int res = 0;
 
 for (int a = 2; a < 10000; a++)
@@ -15,19 +13,19 @@ for (int a = 2; a < 10000; a++)
 
 int d(int n)
 {
-    List<int> factors = new();
+    int factorSum = 0;
     for (int factor = 1; factor * factor <= n; factor++)
     {
         if (n % factor == 0)
         {
-            factors.Add(factor);
+            factorSum += factor;
             if (factor * factor != n && factor != 1)
             {
-                factors.Add(n / factor);
+                factorSum += (n / factor);
             }
         }
     }
-    return factors.Sum();
+    return factorSum;
 }
 
 Console.WriteLine(res);
