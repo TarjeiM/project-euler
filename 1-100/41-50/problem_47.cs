@@ -1,23 +1,10 @@
 // Distinct Prime Factors
 
+using csharp.utilities;
+
 int limit = 1000000;
 
-int[] Primes(int limit)
-{
-    List<int> primes = [];
-    int[] numbers = new int[limit + 1];
-    for (int i = 2; i < limit + 1; i++)
-    {
-        if (numbers[i] == 0) { primes.Add(i); }
-        for (int j = i * 2; j < limit + 1; j += i)
-        {
-            numbers[j] = 1;
-        }
-    }
-    return [.. primes];
-}
-
-HashSet<int> primes = [.. Primes(limit)];
+HashSet<int> primes = [.. Utilities.Primes(limit)];
 
 bool hasFourDistinctPrimeFactors(int number)
 {
