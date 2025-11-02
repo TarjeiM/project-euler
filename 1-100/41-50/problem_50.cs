@@ -1,20 +1,14 @@
 // Consecutive Prime Sum
 
+using csharp.utilities;
+
 (int, int) res = (0, 0);
 
-List<int> primes = new() {2,3};
+int[] primes = Utilities.Primes(10000);
 
-for (int i = 5; i < 4100; i++)
+for (int start = 0; start < primes.Length; start++)
 {
-    if (isPrime(i))
-    {
-        primes.Add(i);
-    }
-}
-
-for (int start = 0; start < primes.Count; start++)
-{
-    for (int end = primes.Count - 1; end >= start; end--)
+    for (int end = primes.Length - 1; end >= start; end--)
     {
         if (end - start < res.Item1)
         {
@@ -32,8 +26,6 @@ for (int start = 0; start < primes.Count; start++)
     }
 }
 
-Console.WriteLine(res.Item2);
-
 bool isPrime(int n)
 {
     if (n % 2 == 0 || n % 3 == 0)
@@ -50,3 +42,5 @@ bool isPrime(int n)
     }
     return true;
 }
+
+Console.WriteLine(res.Item2);
