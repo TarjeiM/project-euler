@@ -5,7 +5,7 @@ namespace csharp.utilities
     {
         public static int[] Primes(int limit)
         {
-            List<int> primes = new();
+            List<int> primes = [];
             int[] numbers = new int[limit + 1];
             for (int i = 2; i < limit + 1; i++)
             {
@@ -19,4 +19,5 @@ namespace csharp.utilities
         }
     }
 }
+
 
