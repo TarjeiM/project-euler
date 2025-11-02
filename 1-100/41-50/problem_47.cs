@@ -4,7 +4,7 @@ int limit = 1000000;
 
 int[] Primes(int limit)
 {
-    List<int> primes = new();
+    List<int> primes = [];
     int[] numbers = new int[limit + 1];
     for (int i = 2; i < limit + 1; i++)
     {
@@ -14,16 +14,14 @@ int[] Primes(int limit)
             numbers[j] = 1;
         }
     }
-    return primes.ToArray();
+    return [.. primes];
 }
 
-HashSet<int> primes = new(Primes(limit));
+HashSet<int> primes = [.. Primes(limit)];
 
 bool hasFourDistinctPrimeFactors(int number)
 {
-    List<int> factors = new();
-
-    int orig = number;
+    List<int> factors = [];
 
     while (number % 2 == 0)
     {
@@ -48,7 +46,7 @@ bool hasFourDistinctPrimeFactors(int number)
         factors.Add(number);
     }
 
-    HashSet<int> distinct = new(factors);
+    HashSet<int> distinct = [.. factors];
 
     return distinct.Count == 4;
 }
