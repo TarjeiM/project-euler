@@ -2,7 +2,7 @@
 
 using csharp.utilities;
 
-HashSet<int> primes = [.. Utilities.Primes(10000)];
+HashSet<int> primes = [.. Utilities.GetPrimes(10000)];
 
 foreach (int prime in primes)
 {
@@ -38,4 +38,5 @@ bool isPermutation(int n1, int n2)
         }
     }
     return true;
+
 }
