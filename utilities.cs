@@ -3,7 +3,8 @@ namespace csharp.utilities
 {
     public static class Utilities
     {
-        public static int[] Primes(int limit)
+        // Sieve of Eratosthenes for generating prime numbers up to a limit (inclusive)
+        public static int[] GetPrimes(int limit)
         {
             List<int> primes = [];
             int[] numbers = new int[limit + 1];
@@ -17,7 +18,24 @@ namespace csharp.utilities
             }
             return [.. primes];
         }
+
+        // Boolean combination generation based on binary number set bits
+        public static bool[][] GetBooleanCombinations(int digits)
+        {
+            List<bool[]> booleanCombinations = [];
+            int end = 1 << digits;
+            for (int i = 1; i < end; i++)
+            {
+                int binary = i;
+                bool[] booleanCombination = new bool[digits];
+                for (int j = 1; j <= digits; j++)
+                {
+                    booleanCombination[^j] = binary % 2 != 0;
+                    binary >>= 1;
+                }
+                booleanCombinations.Add(booleanCombination);
+            }
+            return [.. booleanCombinations];
+        }
     }
 }
-
-
