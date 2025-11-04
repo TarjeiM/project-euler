@@ -4,7 +4,7 @@ using csharp.utilities;
 
 (int, int) res = (0, 0);
 
-int[] primes = Utilities.Primes(10000);
+int[] primes = Utilities.GetPrimes(10000);
 
 for (int start = 0; start < primes.Length; start++)
 {
@@ -44,3 +44,4 @@ bool isPrime(int n)
 }
 
 Console.WriteLine(res.Item2);
+
