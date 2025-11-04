@@ -4,7 +4,7 @@ using csharp.utilities;
 
 int limit = 1000000;
 
-HashSet<int> primes = [.. Utilities.Primes(limit)];
+HashSet<int> primes = [.. Utilities.GetPrimes(limit)];
 
 bool hasFourDistinctPrimeFactors(int number)
 {
@@ -55,3 +55,4 @@ for (int i = 1; i < limit; i++)
         } else { i += 1; }
     }
 }
+
