@@ -1,4 +1,6 @@
 
+using Microsoft.VisualBasic;
+
 namespace csharp.utilities
 {
     public static class Utilities
@@ -36,6 +38,62 @@ namespace csharp.utilities
                 booleanCombinations.Add(booleanCombination);
             }
             return [.. booleanCombinations];
+        }
+
+        // Index combination generation based on binary number set bits
+        public static int[][] GetIndexCombinations(int digits)
+        {
+            List<int[]> indexCombinations = [];
+            int end = 1 << digits;
+            for (int i = 1; i < end; i++)
+            {
+                int binary = i;
+                List<int> indexCombination = [];
+                for (int j = 0; j < digits; j++)
+                {
+                    if (binary % 2 != 0)
+                    {
+                        indexCombination.Add(j);
+                    }
+                    binary >>= 1;
+                }
+                indexCombinations.Add([.. indexCombination]);
+            }
+            return [.. indexCombinations];
+        }
+        
+        public static bool isPrime(int n, int[] primes)
+        {
+            if (n == 2 || n == 3 || n == 5)
+            {
+                return true;
+            }
+            int limit = (int)Math.Sqrt(n) + 1;
+            foreach (int prime in primes)
+            {
+                if (n % prime == 0)
+                {
+                    return false;
+                }
+
+                if (prime > limit)
+                {
+                    break;
+                }
+            }
+
+            return true;
+        }
+
+        public static int GetDigitSum(int n)
+        {
+            int digitSum = 0;
+            while (n > 0)
+            {
+                digitSum += n % 10;
+                n /= 10;
+            }
+            return digitSum;
         }
     }
 }
