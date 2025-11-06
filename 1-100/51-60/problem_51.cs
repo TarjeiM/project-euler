@@ -24,12 +24,9 @@ for (int numberOfDigits = start; numberOfDigits <= end; numberOfDigits++)
         relevantCombinations.Add(indexCombination);
     }
 
-    // done finding relevant combinations for this number of digits
-
     int firstNumber = (int)Math.Pow(10, numberOfDigits - 1);
     int lastNumber = firstNumber * 10;
 
-    // iterate over the numbers in this range of digits
     for (int origin = firstNumber; origin < lastNumber; origin++)
     {
         foreach (int[] combination in relevantCombinations)
@@ -67,4 +64,5 @@ bool hasEightPrimePermutations(int n, int[] indeces, int check)
     }
     return true;
 }
+
 
