@@ -1,6 +1,3 @@
-
-using Microsoft.VisualBasic;
-
 namespace csharp.utilities
 {
     public static class Utilities
@@ -94,6 +91,26 @@ namespace csharp.utilities
                 n /= 10;
             }
             return digitSum;
+        }
+
+        public static bool isPermutation(int n1, int n2)
+        {
+            char[] n1c = [.. n1.ToString()];
+            char[] n2c = [.. n2.ToString()];
+            if (n1c.Length != n2c.Length)
+            {
+                return false;
+            }
+            Array.Sort(n1c);
+            Array.Sort(n2c);
+            for (int i = 0; i < n1c.Length; i++)
+            {
+                if (n1c[i] != n2c[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
